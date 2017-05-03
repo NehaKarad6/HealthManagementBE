@@ -13,11 +13,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Doctor ID"
+        android:inputType="phone"
+        android:hint="Mobile number"
         android:ems="10"
-        android:layout_marginTop="127dp"
-        android:id="@+id/DoctorID"
+        android:layout_marginTop="50dp"
+        android:id="@+id/DoctorMob"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -28,18 +28,28 @@
         android:inputType="textPassword"
         android:ems="10"
         android:hint="Password"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="25dp"
         android:id="@+id/DoctorPassword"
-        android:layout_below="@+id/DoctorID"
+        android:layout_below="@+id/DoctorMob"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
         android:text="LOGIN"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/DoctorPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/btnDoctorLogin1" />
+
+    <Button
+        android:id="@+id/btnDocReg"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="REGISTER"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/btnDoctorLogin1"/>
 </RelativeLayout>

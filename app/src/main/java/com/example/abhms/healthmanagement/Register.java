@@ -6,76 +6,58 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-
-import org.json.JSONObject;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
+
+
+    private DatabaseReference mDatabase;
+    private String mobile;
+    private String address;
+    private String dob;
+    private String weight;
+    private String bg;
+    private String emerg_contact;
+    private String relation;
+    private String emerg_mob;
+    private String name;
+    private String email;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        findViewById(R.id.btnNext).setOnClickListener(this::click);
+        Bundle bundle = getIntent().getExtras();
+         name = bundle.getString("name");
+        email = bundle.getString("email");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        findViewById(R.id.btnSubmit).setOnClickListener(this::click);
 
     }
 
     private void click(View view) {
 
-        JSONObject obj = new JSONObject();
-        try {
-            obj.put("userName", getUserName());
-            obj.put("dob", getdob());
-            //obj.put("gender",getgender());
-            obj.put("address",getaddress());
-            obj.put("bloodgroup",getblood());
-            obj.put("mobileno",getmobile());
-            obj.put("email",getemail());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Q.q(Register.this).add(new JsonObjectRequest("https://healthmanagement-b7215.firebaseio.com/login.json", obj, Register.this::success, Register.this::error));
-
-    }
+        mobile=((EditText) findViewById(R.id.edtMobileNumber)).getText().toString();
+        address=((EditText) findViewById(R.id.EdtAddress)).getText().toString();
+        dob=((EditText) findViewById(R.id.EdtDOB)).getText().toString();
+        weight=((EditText) findViewById(R.id.EdtWeight)).getText().toString();
+        bg=((EditText) findViewById(R.id.EdtBloodGroup)).getText().toString();
+        emerg_contact=((EditText) findViewById(R.id.EdtEmergencyContact)).getText().toString();
+        relation=((EditText) findViewById(R.id.EdtRelation)).getText().toString();
+        emerg_mob=((EditText) findViewById(R.id.EdtEmgMob)).getText().toString();
 
 
-    private void error(VolleyError volleyError) {
+      Patient p=new Patient(name,email,mobile,address,dob,weight,bg,emerg_contact,relation,emerg_mob);
 
-    }
+        mDatabase.child("patients").child(mobile).setValue(p);
+        Intent intent = new Intent(this, Patient_dash.class);
 
-    private void success(JSONObject jsonObject) {
-
-        Intent intent = new Intent(this, Register_emergency.class);
         startActivity(intent);
     }
 
-    private String getUserName() {
-        return ((EditText) findViewById(R.id.edtname)).getText().toString();
-    }
 
-    private String getdob() {
-        return ((EditText) findViewById(R.id.edtdob)).getText().toString();
-    }
-
-    private String getaddress() {
-        return ((EditText) findViewById(R.id.edtaddress)).getText().toString();
-    }
-
-
-    private String getblood() {
-        return ((EditText) findViewById(R.id.edtbg)).getText().toString();
-    }
-
-    private String getmobile() {
-        return ((EditText) findViewById(R.id.edtmobile)).getText().toString();
-    }
-
-    private String getemail() {
-        return ((EditText) findViewById(R.id.edtemail)).getText().toString();
-    }
 
 
 

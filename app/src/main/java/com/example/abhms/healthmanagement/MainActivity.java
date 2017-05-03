@@ -1,9 +1,10 @@
 package com.example.abhms.healthmanagement;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,10 +17,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnDoctorLogin).setOnClickListener(this::click);
         findViewById(R.id.btnRegister).setOnClickListener(this::click);
 
-
     }
-
-
 
     private void click(View view) {
         if(view.getId()== R.id.btnPatientLogin) {
@@ -33,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else if(view.getId()== R.id.btnRegister) {
-            Intent intent = new Intent(this, Register.class);
+            Intent intent = new Intent(this, PSignup.class);
 
             startActivity(intent);
         }

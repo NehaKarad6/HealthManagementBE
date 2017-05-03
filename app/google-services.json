@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "205458702170",
+    "firebase_url": "https://healthmanagement-b7215.firebaseio.com",
+    "project_id": "healthmanagement-b7215",
+    "storage_bucket": "healthmanagement-b7215.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205458702170:android:3c3b7839d86b1d3b",
+        "android_client_info": {
+          "package_name": "com.example.abhms.healthmanagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205458702170-lg8uce9nl4co33lbl6gmlbqv5e5tltcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.abhms.healthmanagement",
+            "certificate_hash": "8191e7f7460f8b546d780d3fe719e76843878551"
+          }
+        },
+        {
+          "client_id": "205458702170-7g24qhjl58rl7q0qrtsgmp69faa87j5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0X8gSuWznDTwKOlxDTAW84ZVtDLOPLy8"
+        },
+        {
+          "current_key": "AIzaSyC24LlceQS6jO3NH03FHdfDVR1F0CX0J4M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205458702170-7g24qhjl58rl7q0qrtsgmp69faa87j5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
